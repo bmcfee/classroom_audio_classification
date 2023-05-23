@@ -26,7 +26,7 @@ class AudioFeature:
         self._concat_features(rms_feature)
 
     def _extract_mfcc(self, n_mfcc=20):
-        mfcc = librosa.feature.mfcc(self.y, sr=self.sr, n_mfcc=n_mfcc)
+        mfcc = librosa.feature.mfcc(y=self.y, sr=self.sr, n_mfcc=n_mfcc)
 
         mfcc_mean = mfcc.mean(axis=1)
         mfcc_std = mfcc.std(axis=1)
